@@ -1,6 +1,5 @@
 /* 
             
-Виведіть на сторінку назву валюти ціну купівлі та ціну продажу. https://api.privatbank.ua/p24api/exchange_rates?json&date=01.07.2024 */ 
 /* Створіть об'єкт заробітної плати obj. Виведіть на екран зарплату Петі та Колі.
                 
                //Цей об'єкт надано:
@@ -9,8 +8,8 @@
 /* let obj = {'Kolia': '1000$', 'Vasia': '500$', 'Petia': '200$'};
 document.write(`Коля зарабатывает:`+ obj.Kolia + '<br>')
 document.write(`Коля зарабатывает:`+ obj.Petia) */
-/* Створіть об'єкт криптокошилок. У гаманці має зберігатись ім'я власника, кілька валют Bitcoin, Ethereum, Stellar і в кожній валюті додатково є ім'я валюти, логотип, кілька монет та курс на сьогоднішній день день. Також в об'єкті гаманець є метод при виклику якого він приймає ім'я валюти та виводить на сторінку інформацію. "Доброго дня, ... ! На вашому балансі (Назва валюти та логотип) залишилося N монет, якщо ви сьогодні продасте їх те, отримаєте ...грн.
- */
+/* Створіть об'єкт криптокошилок. У гаманці має зберігатись ім'я власника, кілька валют Bitcoin, Ethereum, Stellar і в кожній валюті додатково є ім'я валюти, логотип, кілька монет та курс на сьогоднішній день день. Також в об'єкті гаманець є метод при виклику якого він приймає ім'я валюти та виводить на сторінку інформацію. "Доброго дня, ... ! На вашому балансі (Назва валюти та логотип) залишилося N монет, якщо ви сьогодні продасте їх те, отримаєте ...грн.*/
+ 
 /* let cryptowallet = {
     name: 'Михаил', 
     bitkoinName:  'Bitcoin:', 
@@ -26,15 +25,20 @@ document.write(`Коля зарабатывает:`+ obj.Petia) */
     stellarLogo:'<img src="/img/img23.png">',
     stellarPrice: '7,48 грн.',
     show: function  (){
-        document.write(`Доброго дня,` + cryptowallet.name +'!' + `На вашому балансі`+ cryptowallet.bitkoinName+ cryptowallet.bitkoinLogo + 'залишилося'+ cryptowallet.bitkoinHow+ 'монет,'+ 'якщо ви сьогодні продасте їх то, отримаєте' + cryptowallet.bitkoinPrice);
-        document.write('<br>')
-         document.write(`Доброго дня,` + cryptowallet.name +'!' + `На вашому балансі` + cryptowallet.ethereumName+ cryptowallet.ethereumLogo + 'залишилося'+ ',' +cryptowallet.ethereumHow+ 'монет,'+ 'якщо ви сьогодні продасте їх то, отримаєте' + cryptowallet.ethereumPrice);
-        document.write('<br><br>')
-        document.write(`Доброго дня,` + cryptowallet.name +'!' + `На вашому балансі` + cryptowallet.stellarName+ 'Stellar:',
-            + cryptowallet.stellarLogo + 'залишилося'+ ',' +cryptowallet.stellarHow+ 'монет,'+ 'якщо ви сьогодні продасте їх то, отримаєте' + cryptowallet.stellarPrice);
+      let gf = prompt('Какая криптовалюта вас интересует? У вас в наличии: Bitcoin,Ethereum,Stellar ');
+      if(gf === 'Bitcoin' || gf === 'bitcoin'){
+        document.write(`Добрый день,` + '&nbsp;'+cryptowallet.name +'!' + '&nbsp;'+ `На вашем балансе`+'&nbsp;'+ cryptowallet.bitkoinName+ cryptowallet.bitkoinLogo +'&nbsp;'+ 'осталось'+ '&nbsp;'+cryptowallet.bitkoinHow+ '&nbsp;'+'монет,'+ '&nbsp;'+'если вы их сегодня  продадите то получите:' + '&nbsp;'+cryptowallet.bitkoinPrice);
+      }else if (gf === 'Ethereum' || gf === 'ethereum'){
+        document.write(`Добрый день ,` +'&nbsp;'+ cryptowallet.name +'!' +'&nbsp;'+ `На вашем балансе` +'&nbsp;'+ cryptowallet.ethereumName+ '&nbsp;'+cryptowallet.ethereumLogo + '&nbsp;'+'осталось'+ ','+'&nbsp;' +cryptowallet.ethereumHow+ '&nbsp;'+'монет,'+ 'если вы их сегодня  продадите то получите:'+'&nbsp;' + cryptowallet.ethereumPrice);
+      }else if (gf === 'Stellar' || gf === 'stellar'){
+        document.write(`Добрый день ,` +'&nbsp;'+ cryptowallet.name +'!' + '&nbsp;'+ `На вашем балансе` +'&nbsp;'+ cryptowallet.stellarName+ '&nbsp;'+cryptowallet.stellarLogo +'&nbsp;'+'осталось'+ ','+'&nbsp;' +cryptowallet.stellarHow+'&nbsp;'+ 'монет,'+ '&nbsp;'+'если вы их сегодня  продадите то получите:'+'&nbsp;' + cryptowallet.stellarPrice);
+      }else {
+        let h =alert('Такой криптовалюты нет в наличии или вы не коректно ввели название имеющейся')
+      }
     }
 }
-cryptowallet.show() */
+cryptowallet.show()*/
+
 /* Напишіть функцію isEmpty(obj), яка повертає true, якщо об'єкт не має властивостей, інакше false. */
 /* function isEmpty(obj) {
     let fObj = {
